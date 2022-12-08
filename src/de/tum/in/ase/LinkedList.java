@@ -30,6 +30,12 @@ public class LinkedList<T> implements MyList<T> {
 
 
     // TODO: implement interface methods
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     @Override
     public int size() {
         return 0;
