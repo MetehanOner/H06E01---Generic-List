@@ -98,6 +98,28 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(int index, T element) {
 
+        if(index < 0 || index > size()){
+            throw new IndexOutOfBoundsException();
+        }
+
+        ListNode<T> newNode = new ListNode<>(element);
+
+        ListNode<T> cur = first;
+
+        int counter = 0;
+        while(counter == index) {
+            cur = cur.getNext();
+            counter++;
+        }
+        ListNode<T> curPre = cur.getPrevious();
+
+        cur.setPrevious(newNode);
+
+        newNode.setNext(cur);
+        newNode.setPrevious(curPre);
+
+        curPre.setNext(newNode);
+
     }
 
     @Override
