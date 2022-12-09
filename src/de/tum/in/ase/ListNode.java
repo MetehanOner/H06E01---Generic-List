@@ -9,8 +9,8 @@ public class ListNode<T> {
     // TODO: add 3 constructors as in the problem statement
     public ListNode() {
         value = null;
-        next=null;
-        previous=null;
+        next = null;
+        previous = null;
     }
 
     public ListNode(T value) {

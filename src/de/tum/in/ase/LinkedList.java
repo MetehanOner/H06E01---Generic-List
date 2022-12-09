@@ -45,7 +45,7 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return last == null;
     }
 
     @Override
@@ -58,14 +58,14 @@ public class LinkedList<T> implements MyList<T> {
 
         ListNode<T> newNode = new ListNode<>(t);
 
-        if(last==null) {
+        if(isEmpty()) {
            first = last =  newNode;
-           //previous = next = null;
-        } else if (first == last){
-            last = newNode;
-        } else {
-            last = newNode;
+           return;
         }
+
+        newNode.setPrevious(last);
+        last.setNext(newNode);
+        last = newNode;
 
     }
 
