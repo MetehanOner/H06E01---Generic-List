@@ -8,7 +8,8 @@ public class LinkedList<T> implements MyList<T> {
 
     // TODO: add a constructor
     public LinkedList() {
-
+        first = null;
+        last = null;
     }
     // TODO: add getters and setters
 
@@ -55,13 +56,16 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(T t) {
 
-        if(first==null) {
-           first = last = new ListNode<>(t);
+        ListNode<T> newNode = new ListNode<>(t);
+
+        if(last==null) {
+           first = last =  newNode;
            //previous = next = null;
+        } else if (first == last){
+            last = newNode;
+        } else {
+            last = newNode;
         }
-
-        last = new ListNode<>(t);
-
 
     }
 
