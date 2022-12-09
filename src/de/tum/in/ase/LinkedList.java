@@ -98,7 +98,7 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(int index, T element) {
 
-        if(index < 0 || index > size()){
+        if(index < 0 || index >= size()){
             String message = "List index is out of bound";
             throw new IndexOutOfBoundsException(message);
         }
@@ -108,7 +108,7 @@ public class LinkedList<T> implements MyList<T> {
         ListNode<T> cur = first;
 
         int counter = 0;
-        while(counter == index) {
+        while(counter != index) {
             cur = cur.getNext();
             counter++;
         }
