@@ -112,14 +112,19 @@ public class LinkedList<T> implements MyList<T> {
             cur = cur.getNext();
             counter++;
         }
+
         ListNode<T> curPre = cur.getPrevious();
+        if(curPre != null){
+            cur.setPrevious(newNode);
 
-        cur.setPrevious(newNode);
+            newNode.setNext(cur);
+            newNode.setPrevious(curPre);
 
-        newNode.setNext(cur);
-        newNode.setPrevious(curPre);
-
-        curPre.setNext(newNode);
+            curPre.setNext(newNode);
+        } else {
+            cur.setPrevious(newNode);
+            newNode.setNext(cur);
+        }
 
     }
 
