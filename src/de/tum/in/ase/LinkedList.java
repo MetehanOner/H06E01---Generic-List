@@ -99,7 +99,8 @@ public class LinkedList<T> implements MyList<T> {
     public void add(int index, T element) {
 
         if(index < 0 || index > size()){
-            throw new IndexOutOfBoundsException();
+            String message = "List index is out of bound";
+            throw new IndexOutOfBoundsException(message);
         }
 
         ListNode<T> newNode = new ListNode<>(element);
