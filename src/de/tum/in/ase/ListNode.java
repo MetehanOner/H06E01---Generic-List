@@ -15,7 +15,8 @@ public class ListNode<T> {
 
     public ListNode(T value) {
         this.value = value;
-
+        next=null;
+        previous=null;
     }
 
     public ListNode(T value, ListNode<T> previous, ListNode<T> next) {
