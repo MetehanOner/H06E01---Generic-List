@@ -40,7 +40,18 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public int size() {
-        return 0;
+        if(isEmpty()){
+            return 0;
+        }
+
+        ListNode<T> cur = first;
+
+        int counter = 0;
+        while(cur != last) {
+            cur = cur.getNext();
+            counter++;
+        }
+        return counter;
     }
 
     @Override
