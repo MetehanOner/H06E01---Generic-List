@@ -8,15 +8,20 @@ public class ListNode<T> {
 
     // TODO: add 3 constructors as in the problem statement
     public ListNode() {
-
+        value = null;
+        next=null;
+        previous=null;
     }
 
     public ListNode(T value) {
+        this.value = value;
 
     }
 
     public ListNode(T value, ListNode<T> previous, ListNode<T> next) {
-
+        this.value = value;
+        this.previous = previous;
+        this.next = next;
     }
 
     // TODO: add getters and setters

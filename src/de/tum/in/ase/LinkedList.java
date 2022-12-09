@@ -36,6 +36,7 @@ public class LinkedList<T> implements MyList<T> {
         return super.toString();
     }
 
+
     @Override
     public int size() {
         return 0;
@@ -47,17 +48,25 @@ public class LinkedList<T> implements MyList<T> {
     }
 
     @Override
-    public boolean contains(Object o) {
+    public boolean contains(T o) {
         return false;
     }
 
     @Override
-    public void add(Object o) {
+    public void add(T t) {
+
+        if(first==null) {
+           first = last = new ListNode<>(t);
+           //previous = next = null;
+        }
+
+        last = new ListNode<>(t);
+
 
     }
 
     @Override
-    public void remove(Object o) {
+    public void remove(T o) {
 
     }
 
@@ -72,7 +81,7 @@ public class LinkedList<T> implements MyList<T> {
     }
 
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, T element) {
 
     }
 
@@ -82,8 +91,7 @@ public class LinkedList<T> implements MyList<T> {
     }
 
     @Override
-    public int indexOf(Object o) {
+    public int indexOf(T o) {
         return 0;
     }
-
 }
