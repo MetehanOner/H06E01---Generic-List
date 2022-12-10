@@ -34,7 +34,12 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public String toString() {
-        return super.toString();
+        ListNode<T> list = first;
+        String result = "[" + list.getValue();
+        for(list = first; list != null; list = list.getNext()) {
+            result = result + ", " + list.getValue();
+        }
+        return result + "]";
     }
 
 
