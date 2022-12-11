@@ -34,6 +34,9 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public String toString() {
+        if(isEmpty()){
+            return "[" + "]";
+        }
         ListNode<T> list = first;
         String result = "[" + list.getValue();
         ListNode<T> listStart = list.getNext();
@@ -93,6 +96,12 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public void clear() {
+
+        if(isEmpty()) {
+            return;
+        }
+
+        first = last = null;
 
     }
 

@@ -10,5 +10,8 @@ public class Main {
         l.add(2,300);
         System.out.println(l.toString());
         System.out.println(l.size());
+        l.clear();
+        System.out.println(l.toString());
+        System.out.println(l.size());
     }
 }
