@@ -36,7 +36,8 @@ public class LinkedList<T> implements MyList<T> {
     public String toString() {
         ListNode<T> list = first;
         String result = "[" + list.getValue();
-        for(list = first; list != null; list = list.getNext()) {
+        ListNode<T> listStart = list.getNext();
+        for(list = listStart; list != null; list = list.getNext()) {
             result = result + ", " + list.getValue();
         }
         return result + "]";
@@ -103,7 +104,7 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(int index, T element) {
 
-        if(index < 0 || index >= size()){
+        if(index < 0){
             String message = "List index is out of bound";
             throw new IndexOutOfBoundsException(message);
         }

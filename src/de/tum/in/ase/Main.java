@@ -5,8 +5,9 @@ public class Main {
 
         LinkedList<Integer> l = new LinkedList<>();
         l.add(2);
-        //l.add(0,2);
-        //l.add(1,2);
+        l.add(265);
+        l.add(1,2);
+        l.add(2,300);
         System.out.println(l.toString());
     }
 }
