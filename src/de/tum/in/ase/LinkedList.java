@@ -71,6 +71,10 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public boolean contains(T o) {
 
+        if(isEmpty()) {
+            return false;
+        }
+
         ListNode<T> list = first;
 
         if(list.getValue().equals(o)){
