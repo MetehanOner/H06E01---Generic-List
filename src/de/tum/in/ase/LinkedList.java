@@ -70,20 +70,22 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public boolean contains(T o) {
-        if(isEmpty()) {
-            return false;
+
+        ListNode<T> list = first;
+
+        if(list.getValue().equals(o)){
+            return true;
         }
 
-        ListNode<T> newNode = new ListNode<>(o);
-        ListNode<T> cur = first;
-
-        while(cur != null) {
-            if(cur.getValue() == newNode.getValue()) {
+        ListNode<T> listStart = list.getNext();
+        for(list = listStart; list != null; list = list.getNext()) {
+            if(list.getValue().equals(o)){
                 return true;
             }
-            cur = cur.getNext();
         }
+
         return false;
+
 
     }
 
