@@ -104,7 +104,7 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(int index, T element) {
 
-        if(index < 0){
+        if(index < 0 || index >= size()){
             String message = "List index is out of bound";
             throw new IndexOutOfBoundsException(message);
         }
