@@ -53,7 +53,7 @@ public class LinkedList<T> implements MyList<T> {
         ListNode<T> cur = first;
 
         int counter = 0;
-        while(cur != last) {
+        while(cur != null) {
             cur = cur.getNext();
             counter++;
         }

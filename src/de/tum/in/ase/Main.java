@@ -9,5 +9,6 @@ public class Main {
         l.add(1,2);
         l.add(2,300);
         System.out.println(l.toString());
+        System.out.println(l.size());
     }
 }
