@@ -77,8 +77,8 @@ public class LinkedList<T> implements MyList<T> {
         ListNode<T> newNode = new ListNode<>(o);
         ListNode<T> cur = first;
 
-        while(cur != null){
-            if(cur.getValue() == newNode.getValue()){
+        while(cur != null) {
+            if(cur.getValue() == newNode.getValue()) {
                 return true;
             }
             cur = cur.getNext();
@@ -127,7 +127,7 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void add(int index, T element) {
 
-        if(index < 0 || index >= size()){
+        if(index < 0 || index >= size()) {
             String message = "List index is out of bound";
             throw new IndexOutOfBoundsException(message);
         }
@@ -135,7 +135,6 @@ public class LinkedList<T> implements MyList<T> {
         ListNode<T> newNode = new ListNode<>(element);
 
         ListNode<T> cur = first;
-
         int counter = 0;
         while(counter != index) {
             cur = cur.getNext();
@@ -143,16 +142,23 @@ public class LinkedList<T> implements MyList<T> {
         }
 
         ListNode<T> curPre = cur.getPrevious();
-        if(curPre != null){
+        ListNode<T> curNext = cur.getNext();
+
+        if(curPre != null) {
             cur.setPrevious(newNode);
 
             newNode.setNext(cur);
             newNode.setPrevious(curPre);
 
             curPre.setNext(newNode);
-        } else {
+
+        } else if (curPre == null) {
             cur.setPrevious(newNode);
             newNode.setNext(cur);
+
+        } else if (curNext == null) {
+            cur.setNext(newNode);
+            newNode.setPrevious(cur);
         }
 
     }

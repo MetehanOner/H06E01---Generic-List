@@ -6,10 +6,12 @@ public class Main {
         LinkedList<Integer> l = new LinkedList<>();
         l.add(2);
         l.add(265);
-        l.add(1,2);
+        l.add(1,12);
         l.add(2,300);
         l.add(500);
+        System.out.println(l.size());
         l.add(4,6);
+        l.add(5,0);
         System.out.println(l.toString());
         System.out.println(l.size());
         //l.clear();
