@@ -127,6 +127,13 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public T get(int index) {
+
+        if(index < 0 || index >= size()) {
+            String message = "List index is out of bound";
+            throw new IndexOutOfBoundsException(message);
+        }
+
+
         return null;
     }
 
@@ -161,10 +168,12 @@ public class LinkedList<T> implements MyList<T> {
         } else if (curPre == null) {
             cur.setPrevious(newNode);
             newNode.setNext(cur);
+            first = newNode;
 
         } else if (curNext == null) {
             cur.setNext(newNode);
             newNode.setPrevious(cur);
+            last = newNode;
         }
 
     }
