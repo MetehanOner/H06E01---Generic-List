@@ -57,7 +57,7 @@ public class LinkedList<T> implements MyList<T> {
             cur = cur.getNext();
             counter++;
         }
-        return counter;
+        return counter-1;
     }
 
     @Override
