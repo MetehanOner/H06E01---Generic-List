@@ -112,6 +112,8 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void remove(T o) {
 
+
+
     }
 
     @Override
@@ -133,8 +135,15 @@ public class LinkedList<T> implements MyList<T> {
             throw new IndexOutOfBoundsException(message);
         }
 
+        ListNode<T> cur = first;
 
-
+        int counter = 0;
+        while(cur != null) {
+            if(counter != index){
+                cur = cur.getNext();
+            }
+            return cur.getValue();
+        }
 
         return null;
     }

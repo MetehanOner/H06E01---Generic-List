@@ -26,5 +26,6 @@ public class Main {
         System.out.println(l.contains(265));
         System.out.println(l.contains(22));
         System.out.println(l.contains(500));
+        System.out.println(l.get(0));
     }
 }
