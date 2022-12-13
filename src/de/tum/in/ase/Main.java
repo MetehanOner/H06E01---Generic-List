@@ -11,7 +11,8 @@ public class Main {
         l.add(0,3001);
         l.add(2,300);
         l.add(500);
-        l.add(1,3331);
+        System.out.println(l.toString());
+        /*l.add(1,3331);
         System.out.println(l.size());
         l.add(3,3);
         l.add(4,6);
@@ -25,7 +26,7 @@ public class Main {
         //System.out.println(l.size());
         System.out.println(l.contains(265));
         System.out.println(l.contains(22));
-        System.out.println(l.contains(500));
-        System.out.println(l.get(0));
+        System.out.println(l.contains(500));*/
+        System.out.println(l.get(3));
     }
 }

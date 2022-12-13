@@ -139,10 +139,13 @@ public class LinkedList<T> implements MyList<T> {
 
         int counter = 0;
         while(cur != null) {
-            if(counter != index){
+            while(counter != index){
                 cur = cur.getNext();
+                counter++;
+
             }
             return cur.getValue();
+
         }
 
         return null;
