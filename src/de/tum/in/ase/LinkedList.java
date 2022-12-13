@@ -138,7 +138,7 @@ public class LinkedList<T> implements MyList<T> {
         ListNode<T> cur = first;
 
         int counter = 0;
-        while(cur != null) {
+        if(cur != null) {
             while(counter != index){
                 cur = cur.getNext();
                 counter++;
