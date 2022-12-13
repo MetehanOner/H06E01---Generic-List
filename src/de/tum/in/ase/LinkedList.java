@@ -112,6 +112,10 @@ public class LinkedList<T> implements MyList<T> {
     @Override
     public void remove(T o) {
 
+        if(o == null){
+            return;
+        }
+
         if(!contains(o)){
            return;
         }
