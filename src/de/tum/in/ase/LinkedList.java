@@ -134,6 +134,8 @@ public class LinkedList<T> implements MyList<T> {
         }
 
 
+
+
         return null;
     }
 
@@ -180,11 +182,44 @@ public class LinkedList<T> implements MyList<T> {
 
     @Override
     public T remove(int index) {
-        return null;
+
+        if (index < 1 || index > size()) {
+            String message = "List index is out of bound";
+            throw new IndexOutOfBoundsException(message);
+        }
+
+        ListNode<T> cur = first;
+
+        T deletedNode = null;
+        if (first != null) {
+
+            for (int i = 0; i < index - 1 && cur.getNext() != null; i++) {
+                cur = cur.getNext();
+            }
+            cur.setNext(cur.getNext().getNext());
+            deletedNode = cur.getNext().getValue();
+
+        }
+
+        return deletedNode;
     }
 
     @Override
     public int indexOf(T o) {
-        return 0;
+
+        ListNode<T> cur = first;
+
+        if(cur!=null){
+            int i=0;
+            while(cur.getNext()!=null){
+                if(cur.getValue().equals(o)){
+                    return i;
+                }
+                cur = cur.getNext();
+                i++;
+            }
+        }
+
+        return -1;
     }
 }
