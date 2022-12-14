@@ -29,8 +29,10 @@ public class Main {
         System.out.println(l.contains(500));*/
         //System.out.println(l.get(3));
         System.out.println(l.toString());
-        Integer i = 5;
-        l.remove(i);
+        l.add(null);
+        System.out.println(l.toString());
+        //Integer i = 5;
+        l.remove(null);
         System.out.println(l.toString());
     }
 }

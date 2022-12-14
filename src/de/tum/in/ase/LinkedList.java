@@ -113,7 +113,6 @@ public class LinkedList<T> implements MyList<T> {
     public void remove(T o) {
 
         if(o == null) {
-            remove(0);
             return;
         }
 
@@ -121,9 +120,20 @@ public class LinkedList<T> implements MyList<T> {
            return;
         }
 
-        for(int i=0; i < size(); i++) {
-            if(get(i).equals(o)){
-                remove(i);
+        ListNode<T> list = first;
+
+        if(list.getValue().equals(o)){
+            //remove element
+            first = first.getNext();
+            first.setPrevious(null);
+        }
+
+        ListNode<T> listStart = list.getNext();
+        for(list = listStart; list != null; list = list.getNext()) {
+            if(list.getValue().equals(o)){
+                //remove element
+                list.getPrevious().setNext(list.getNext());
+                list.getNext().setPrevious(list.getPrevious());
             }
         }
 
